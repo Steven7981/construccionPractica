@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class piezasLegos{
 
@@ -6,9 +7,11 @@ class piezasLegos{
         std::string nombre;
 
     public:
+
+        std::string arregloPiezas[999];
+
         void crearPieza(std::string nombre){
             this ->nombre=nombre;
     }
-
-
+   
 };
