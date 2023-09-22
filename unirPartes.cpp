@@ -4,19 +4,22 @@
 #include <vector>
 
 class Conjunto{
+    private:
+    std::queue<std::vector<std::string > > listaPartes;
     public:
+    std::queue<std::vector<std::string>> unir(std::queue<std::vector<std::string>> colaCasa, int i,std::queue<std::vector<std::string > > colaFinal) {
+        std::vector<std::string> listaPartes; 
 
-    std::vector<std::string> listaPartes;
-
-    std::queue<std::vector<std::string > > unir(std::queue<std::string>& colaPiezas,int i,std::queue<std::vector<std::string > > colaCasa){
-        for (int j = 0; j<i;j++){
-                std::string aux=colaPiezas.front();
-                colaPiezas.pop();
-                listaPartes.push_back(aux);
-            }
-            colaCasa.push(listaPartes);
-            return colaCasa;
+        for (int j = 0; j < i; j++) {
+                std::vector<std::string> parte = colaCasa.front();
+                colaCasa.pop();
+                listaPartes.insert(listaPartes.end(), parte.begin(), parte.end());
         }
+
+        colaFinal.push(listaPartes);
+
+        return colaFinal;
+    }
 };
 
 #endif
