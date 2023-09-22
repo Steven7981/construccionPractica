@@ -8,15 +8,22 @@
 
 int main(){
     Conjunto arregloCasa;
-    piezasLegos p1;
+
+    //cola donde se van almacenando las piezas creadas por el usuario
+    std::queue <std::string> colaPiezas;
+
+    //cola en donde se van almacenando las partes de la casa creadas por el usuario
+    std::queue<std::vector<std::string > > colaCasa;
+
+    //cola finaal en donde estan todas las partes de la casa unidas
+    std::queue<std::vector<std::string > > colaFinal;
+
+    piezasLegos p1; 
     piezasLegos p2;
     piezasLegos p3;
     piezasLegos p4;
-    std::queue<std::vector<std::string > > colaCasa;
-    std::queue <std::string> colaPiezas;
-    std::queue<std::vector<std::string > > colaFinal;
-
     partesCasa cuarto;
+
     p1.crearPieza("Bloque",colaPiezas);
     p2.crearPieza("piso",colaPiezas);
     p3.crearPieza("techo",colaPiezas);
