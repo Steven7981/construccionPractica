@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <queue>
 
 class piezasLegos{
 
@@ -7,11 +8,10 @@ class piezasLegos{
         std::string nombre;
 
     public:
-
-        std::string arregloPiezas[999];
-
+        std::queue<std::string> arregloPiezas;
         void crearPieza(std::string nombre){
             this ->nombre=nombre;
+            arregloPiezas.push(nombre);
     }
    
 };
