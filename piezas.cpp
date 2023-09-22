@@ -1,17 +1,15 @@
+#ifndef PIEZAS_CPP
+#define PIEZAS_CPP
 #include <iostream>
 #include <string>
 #include <queue>
 
 class piezasLegos{
-
-    private:
-        std::string nombre;
-
     public:
-        std::queue<std::string> arregloPiezas;
-        void crearPieza(std::string nombre){
-            this ->nombre=nombre;
-            arregloPiezas.push(nombre);
+        std::queue <std::string> crearPieza(std::string nombre,std::queue<std::string>& cola){
+            cola.push(nombre);
+            return cola;
     }
-   
 };
+
+#endif
